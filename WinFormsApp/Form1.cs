@@ -112,18 +112,23 @@ namespace WinFormsApp
 
                             XmlElement name = xdoc.CreateElement("Name");
                             XmlText nameText = xdoc.CreateTextNode(emp.Name);
+                            XmlElement id=xdoc.CreateElement("Id");
+                            XmlText idText = xdoc.CreateTextNode(emp.Id.ToString());
                             XmlElement age = xdoc.CreateElement("Age");
                             XmlText ageText = xdoc.CreateTextNode(emp.Age.ToString());
                             XmlElement carEmp = xdoc.CreateElement("Car");
                             XmlText carText = xdoc.CreateTextNode(emp.Car.ToString());
                             employees.AppendChild(user);
+                         user.AppendChild(id);
                             user.AppendChild(name);
                             user.AppendChild(age);
                             user.AppendChild(carEmp);
+                        id.AppendChild(idText);
                             name.AppendChild(nameText);
                             age.AppendChild(ageText);
                             carEmp.AppendChild(carText);
                             xdoc.Save(@"C:\test\test.xml");
+                         MessageBox.Show("Saved successfully!");
 
                         }
                         else
@@ -139,14 +144,18 @@ namespace WinFormsApp
 
                                 XmlElement name = xdoc.CreateElement("Name");
                                 XmlText nameText = xdoc.CreateTextNode(emp.Name);
+                             XmlElement id=xdoc.CreateElement("Id");
+                            XmlText idText = xdoc.CreateTextNode(emp.Id.ToString());
                                 XmlElement age = xdoc.CreateElement("Age");
                                 XmlText ageText = xdoc.CreateTextNode(emp.Age.ToString());
                                 XmlElement carEmp = xdoc.CreateElement("Car");
                                 XmlText carText = xdoc.CreateTextNode(emp.Car.ToString());
-
+                           
+                            user.AppendChild(id);
                                 user.AppendChild(name);
                                 user.AppendChild(age);
                                 user.AppendChild(carEmp);
+                             id.AppendChild(idText);
                                 name.AppendChild(nameText);
                                 age.AppendChild(ageText);
                                 carEmp.AppendChild(carText);
