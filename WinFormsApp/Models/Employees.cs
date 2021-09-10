@@ -6,7 +6,6 @@ namespace WinFormsApp.Models
 {
     public class Employee
     {
-        private int count = 1;
         public int Id { get; set; }
         public string Name { get; set; }
         public int Age { get; set; }
@@ -17,16 +16,14 @@ namespace WinFormsApp.Models
             Name = name;
             Age = age;
             Car = car;
-            Id = GetHashCode();
+            Id = name.GetHashCode();
         }
 
         public Employee()
         {
-
+             
+           
         }
-        public override int GetHashCode()
-        {
-            return count;
-        }
+        
     }
 }
